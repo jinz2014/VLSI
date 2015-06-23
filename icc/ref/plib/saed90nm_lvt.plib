@@ -1,0 +1,3412 @@
+phys_library ( "saed90nm_lvt_fr" ) {
+  time_unit : 1ns;
+  time_conversion_factor : 1000;
+  voltage_unit : 1v;
+  voltage_conversion_factor : 1000;
+  power_unit : 1pw;
+  power_conversion_factor : 1000;
+  distance_unit : 1um;
+  dist_conversion_factor : 1000;
+  capacitance_unit : 1pf;
+  capacitance_conversion_factor : 10000000;
+  resistance_unit : 1kohm;
+  resistance_conversion_factor : 10000000;
+  current_unit : 1uA;
+  current_conversion_factor : 1000;
+  inductance_unit : 1nh;
+  inductance_conversion_factor : 100;
+  bus_naming_style : "%s[%d]";
+  manufacturing_grid : 0.005;
+  SiO2_dielectric_constant : 3.61e-05;
+  antenna_lut_template ( "antenna_lut_template" ) {
+    variable_1 : antenna_diffusion_area;
+    index_1 ( "0, 1" );
+  } /* end antenna_lut_template */
+
+  wire_lut_template ( "fat_2D_via_array" ) {
+    variable_1 : bottom_routing_width;
+    variable_2 : top_routing_width;
+    index_1 ( "0, 1" );
+    index_2 ( "0, 1" );
+  } /* end wire_lut_template */
+
+  contact_lut_template ( "contact_lut1" ) {
+    variable_1 : contact_enclosure;
+    index_1 ( "0, 1" );
+  } /* end contact_lut_template */
+
+  contact_lut_template ( "contact_lut2" ) {
+    variable_1 : contact_spacing;
+    index_1 ( "0, 1" );
+  } /* end contact_lut_template */
+
+  wire_lut_template ( "wire_table_1D" ) {
+    variable_1 : routing_width;
+    index_1 ( "0, 1" );
+  } /* end wire_lut_template */
+
+  wire_lut_template ( "wire_table_2D" ) {
+    variable_1 : routing_width;
+    variable_2 : extension_length;
+    index_1 ( "0, 1" );
+    index_2 ( "0, 1" );
+  } /* end wire_lut_template */
+
+  spacing_lut_template ( "fat_spacing_3D" ) {
+    variable_1 : routing_width;
+    variable_2 : routing_width;
+    variable_3 : routing_length;
+    index_1 ( "0, 1" );
+    index_2 ( "0, 1" );
+    index_3 ( "0, 1" );
+  } /* end spacing_lut_template */
+
+  spacing_lut_template ( "fat_spacing_2D" ) {
+    variable_1 : routing_width;
+    variable_2 : routing_width;
+    index_1 ( "0, 1" );
+    index_2 ( "0, 1" );
+  } /* end spacing_lut_template */
+
+  resource ( "std_cell" ) {
+    baseline_temperature : 25;
+    device_layer ( "NWELL" );
+    device_layer ( "DNW" );
+    device_layer ( "DIFF" );
+    device_layer ( "PIMP" );
+    device_layer ( "NIMP" );
+    device_layer ( "DIFF_25" );
+    device_layer ( "PAD" );
+    device_layer ( "ESD_25" );
+    device_layer ( "SBLK" );
+    device_layer ( "HVTIMP" );
+    device_layer ( "LVTIMP" );
+    device_layer ( "M1PIN" );
+    device_layer ( "M2PIN" );
+    device_layer ( "M3PIN" );
+    device_layer ( "M4PIN" );
+    device_layer ( "M5PIN" );
+    device_layer ( "M6PIN" );
+    device_layer ( "M7PIN" );
+    device_layer ( "M8PIN" );
+    device_layer ( "M9PIN" );
+    device_layer ( "HOTNWL" );
+    device_layer ( "DIOD" );
+    device_layer ( "BJTDMY" );
+    device_layer ( "RNW" );
+    device_layer ( "RPOLY" );
+    device_layer ( "RDIFF" );
+    device_layer ( "LOGO" );
+    device_layer ( "IP" );
+    device_layer ( "prBoundary" );
+    device_layer ( "RM1" );
+    device_layer ( "RM2" );
+    device_layer ( "RM3" );
+    device_layer ( "RM4" );
+    device_layer ( "RM5" );
+    device_layer ( "RM6" );
+    device_layer ( "RM7" );
+    device_layer ( "RM8" );
+    device_layer ( "RM9" );
+    device_layer ( "DM1EXCL" );
+    device_layer ( "DM2EXCL" );
+    device_layer ( "DM3EXCL" );
+    device_layer ( "DM4EXCL" );
+    device_layer ( "DM5EXCL" );
+    device_layer ( "DM6EXCL" );
+    device_layer ( "DM7EXCL" );
+    device_layer ( "DM8EXCL" );
+    device_layer ( "DM9EXCL" );
+    poly_layer ( "PO" ) {
+    } /* end poly_layer */
+
+    cont_layer ( "CO" ) {
+      spacing : 0.13;
+      max_current_density : 701000;
+    } /* end cont_layer */
+
+    routing_layer ( "M1" ) {
+      default_routing_width : 0.14;
+      spacing : 0.14;
+      pitch : 0.32;
+      wire_extension : 0.12;
+      routing_direction : horizontal;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.06;
+      min_width : 0.14;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA1" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M2" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 0.32;
+      wire_extension : 0.12;
+      routing_direction : vertical;
+      cap_multiplier : 1;
+      offset : 0.16;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA2" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M3" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 0.64;
+      wire_extension : 0.12;
+      routing_direction : horizontal;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA3" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M4" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 0.64;
+      wire_extension : 0.12;
+      routing_direction : vertical;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA4" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M5" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 1.28;
+      wire_extension : 0.12;
+      routing_direction : horizontal;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA5" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M6" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 1.28;
+      wire_extension : 0.12;
+      routing_direction : vertical;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA6" ) {
+      spacing : 0.14;
+    } /* end cont_layer */
+
+    routing_layer ( "M7" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 2.56;
+      wire_extension : 0.12;
+      routing_direction : horizontal;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA7" ) {
+      spacing : 0.16;
+    } /* end cont_layer */
+
+    routing_layer ( "M8" ) {
+      default_routing_width : 0.16;
+      spacing : 0.16;
+      pitch : 3.84;
+      wire_extension : 0.23;
+      routing_direction : vertical;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.07;
+      min_width : 0.16;
+    } /* end routing_layer */
+
+    cont_layer ( "VIA8" ) {
+      spacing : 0.34;
+    } /* end cont_layer */
+
+    routing_layer ( "M9" ) {
+      default_routing_width : 0.45;
+      spacing : 0.45;
+      pitch : 5.12;
+      wire_extension : 0.23;
+      routing_direction : horizontal;
+      cap_multiplier : 1;
+      max_width : 1000;
+      min_area : 0.6;
+      min_width : 0.45;
+    } /* end routing_layer */
+
+    overlap_layer ( "OverlapCheck" );
+
+    via ( "VIA12A" ) {
+      via_id : 1;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M1" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA1" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M2" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA23" ) {
+      via_id : 2;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M2" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA2" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M3" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA34" ) {
+      via_id : 3;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M3" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA3" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M4" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA45" ) {
+      via_id : 4;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M4" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA4" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M5" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA56" ) {
+      via_id : 5;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M5" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA5" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M6" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA67" ) {
+      via_id : 6;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M6" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA6" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M7" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA78" ) {
+      via_id : 7;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M7" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA7" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M8" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA89" ) {
+      via_id : 8;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "M8" ) {
+        rectangle ( -0.26, -0.225, 0.26, 0.225 );
+      } /* end via_layer */
+
+      via_layer ( "VIA8" ) {
+        contact_spacing ( 0.34, 0.34 );
+        rectangle ( -0.18, -0.18, 0.18, 0.18 );
+      } /* end via_layer */
+
+      via_layer ( "M9" ) {
+        rectangle ( -0.26, -0.225, 0.26, 0.225 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "POLYCON" ) {
+      via_id : 9;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "PO" ) {
+        rectangle ( -0.115, -0.105, 0.115, 0.105 );
+      } /* end via_layer */
+
+      via_layer ( "CO" ) {
+        contact_spacing ( 0.13, 0.13 );
+        rectangle ( -0.065, -0.065, 0.065, 0.065 );
+      } /* end via_layer */
+
+      via_layer ( "M1" ) {
+        rectangle ( -0.115, -0.105, 0.115, 0.105 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "DIFFCON" ) {
+      via_id : 10;
+      is_default : FALSE;
+      resistance : 0.0016;
+      via_layer ( "DIFF" ) {
+        rectangle ( -0.115, -0.105, 0.115, 0.105 );
+      } /* end via_layer */
+
+      via_layer ( "CO" ) {
+        contact_spacing ( 0.13, 0.13 );
+        rectangle ( -0.065, -0.065, 0.065, 0.065 );
+      } /* end via_layer */
+
+      via_layer ( "M1" ) {
+        rectangle ( -0.115, -0.105, 0.115, 0.105 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA12B" ) {
+      via_id : 11;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M1" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+      via_layer ( "VIA1" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M2" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA12C" ) {
+      via_id : 15;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M1" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA1" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M2" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA23C" ) {
+      via_id : 16;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M2" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA2" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M3" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA34C" ) {
+      via_id : 17;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M3" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA3" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M4" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA45C" ) {
+      via_id : 18;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M4" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA4" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M5" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA56C" ) {
+      via_id : 19;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M5" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA5" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M6" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA67C" ) {
+      via_id : 20;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M6" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA6" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M7" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA78C" ) {
+      via_id : 21;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M7" ) {
+        rectangle ( -0.08, -0.12, 0.08, 0.12 );
+      } /* end via_layer */
+
+      via_layer ( "VIA7" ) {
+        contact_spacing ( 0.16, 0.16 );
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+      } /* end via_layer */
+
+      via_layer ( "M8" ) {
+        rectangle ( -0.12, -0.08, 0.12, 0.08 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    via ( "VIA89C" ) {
+      via_id : 22;
+      is_default : TRUE;
+      resistance : 0.0016;
+      via_layer ( "M8" ) {
+        rectangle ( -0.225, -0.26, 0.225, 0.26 );
+      } /* end via_layer */
+
+      via_layer ( "VIA8" ) {
+        contact_spacing ( 0.34, 0.34 );
+        rectangle ( -0.18, -0.18, 0.18, 0.18 );
+      } /* end via_layer */
+
+      via_layer ( "M9" ) {
+        rectangle ( -0.26, -0.225, 0.26, 0.225 );
+      } /* end via_layer */
+
+    } /* end via */
+
+    tile ( "unit" ) {
+      size ( 0.32, 2.88 );
+      tile_class : core;
+    } /* end tile */
+
+    site ( "unit" ) {
+      symmetry : xy;
+      site_class : core;
+      size ( 0.32, 2.88 );
+    } /* end site */
+
+  } /* end resource */
+
+  topological_design_rules () {
+    same_net_min_spacing ( NWELL, DIFF, 0.62, FALSE );
+    same_net_min_spacing ( NWELL, DNW, 3.5, FALSE );
+    same_net_min_spacing ( PO, DIFF, 0.05, FALSE );
+    same_net_min_spacing ( DIFF, CO, 0.12, FALSE );
+    same_net_min_spacing ( PO, CO, 0.12, FALSE );
+    min_overhang ( PO, CO, 0.04 );
+    same_net_min_spacing ( PIMP, NIMP, 0.24, FALSE );
+    min_overhang ( M1, CO, 0.005 );
+    same_net_min_spacing ( VIA1, CO, 0, TRUE );
+    min_overhang ( M1, VIA1, 0.01 );
+    min_overhang ( M2, VIA1, 0.01 );
+    same_net_min_spacing ( VIA1, VIA2, 0, TRUE );
+    min_overhang ( M2, VIA2, 0.01 );
+    min_overhang ( M3, VIA2, 0.01 );
+    min_overhang ( M3, VIA3, 0.01 );
+    same_net_min_spacing ( VIA2, VIA3, 0, TRUE );
+    min_overhang ( M4, VIA3, 0.01 );
+    same_net_min_spacing ( VIA3, VIA4, 0, TRUE );
+    min_overhang ( M4, VIA4, 0.01 );
+    min_overhang ( M5, VIA4, 0.01 );
+    min_overhang ( M5, VIA5, 0.01 );
+    same_net_min_spacing ( VIA4, VIA5, 0, TRUE );
+    min_overhang ( M6, VIA5, 0.01 );
+    min_overhang ( M6, VIA6, 0.01 );
+    same_net_min_spacing ( VIA5, VIA6, 0, TRUE );
+    min_overhang ( M7, VIA6, 0.01 );
+    min_overhang ( M7, VIA7, 0.01 );
+    same_net_min_spacing ( VIA6, VIA7, 0, TRUE );
+    min_overhang ( M8, VIA7, 0.01 );
+    min_overhang ( M8, VIA8, 0.01 );
+    same_net_min_spacing ( VIA7, VIA8, 0, TRUE );
+    min_overhang ( M9, VIA8, 0.01 );
+    same_net_min_spacing ( CO, RPOLY, 0.22, FALSE );
+    same_net_min_spacing ( SBLK, DIFF, 0.24, FALSE );
+    same_net_min_spacing ( SBLK, CO, 0.24, FALSE );
+    min_enclosed_area_table_surrounding_metal : all_fat_wires;
+
+    extension_wire_spacing_rule () {
+      extension_wire_qualifier () {
+        connected_to_fat_wire : TRUE;
+        not_connected_to_fat_wire : FALSE;
+        corner_wire : TRUE;
+      } /* end extension_wire_qualifier */
+
+      spacing_check_qualifier () {
+        wires_to_check : all_wires;
+        overlapping_projection_wires : TRUE;
+        non_overlapping_projection_wires : TRUE;
+        corner_to_corner : FALSE;
+      } /* end spacing_check_qualifier */
+
+      min_total_projection_length_qualifier () {
+        overlapping_projection : FALSE;
+        non_overlapping_projection : FALSE;
+        parallel_length : TRUE;
+      } /* end min_total_projection_length_qualifier */
+
+    } /* end extension_wire_spacing_rule */
+
+    antenna_rule ( "M1_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M1, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M2_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M2, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M3_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M3, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M4_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M4, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M5_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M5, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M6_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M6, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M7_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M7, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M8_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 43027.82, 43483.36" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M8, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "M9_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "1000, 1000, 50488, 58480" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( M9, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA1_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA1, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA2_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA2, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA3_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA3, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA4_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA4, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA5_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA5, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA6_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA6, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA7_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA7, 1 );
+    } /* end antenna_rule */
+
+    antenna_rule ( "VIA8_mode4_diodemode2_rule" ) {
+      apply_to : gate_area;
+      geometry_calculation_method : connected_only;
+      pin_calculation_method : all_pins;
+      routing_layer_calculation_method : side_wall_area;
+      antenna_ratio_calculation_method : max_antenna_ratio;
+      antenna_accumulation_calculation_method : single_layer;
+      antenna_ratio ( "antenna_lut_template" ) {
+        index_1 ( "0, 0.06, 0.061, 1.06" );
+        values ( "20, 20, 912.81, 1122.6" );
+      } /* end antenna_ratio */
+
+      layer_antenna_factor ( VIA8, 1 );
+    } /* end antenna_rule */
+
+    density_rule ( "M1" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 10, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M1" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 60 );
+    } /* end density_rule */
+
+    density_rule ( "M2" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M2" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M3" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M3" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M4" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M4" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M5" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M5" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M6" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M6" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M7" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M7" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M8" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M8" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 70 );
+    } /* end density_rule */
+
+    density_rule ( "M9" ) {
+      check_window_size ( 50, 50 );
+      check_step ( 25, 25 );
+      density_range ( 15, 100 );
+    } /* end density_rule */
+
+    density_rule ( "M9" ) {
+      check_window_size ( 100, 100 );
+      check_step ( 50, 50 );
+      density_range ( 1, 60 );
+    } /* end density_rule */
+
+    via_rule_generate ( "VIA12A" ) {
+      resistance : 0.0016;
+      routing_formula ( "M1" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA1" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M2" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA23" ) {
+      resistance : 0.0016;
+      routing_formula ( "M2" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA2" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M3" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA34" ) {
+      resistance : 0.0016;
+      routing_formula ( "M3" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA3" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M4" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA45" ) {
+      resistance : 0.0016;
+      routing_formula ( "M4" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA4" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M5" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA56" ) {
+      resistance : 0.0016;
+      routing_formula ( "M5" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA5" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M6" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA67" ) {
+      resistance : 0.0016;
+      routing_formula ( "M6" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA6" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M7" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA78" ) {
+      resistance : 0.0016;
+      routing_formula ( "M7" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA7" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M8" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA89" ) {
+      resistance : 0.0016;
+      routing_formula ( "M8" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.045;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA8" ) {
+        rectangle ( -0.18, -0.18, 0.18, 0.18 );
+        contact_spacing ( 0.7, 0.7 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M9" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.08;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "POLYCON" ) {
+      resistance : 0.0016;
+      routing_formula ( "PO" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "CO" ) {
+        rectangle ( -0.065, -0.065, 0.065, 0.065 );
+        contact_spacing ( 0.26, 0.26 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M1" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "DIFFCON" ) {
+      resistance : 0.0016;
+      routing_formula ( "DIFF" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "CO" ) {
+        rectangle ( -0.065, -0.065, 0.065, 0.065 );
+        contact_spacing ( 0.26, 0.26 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M1" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA12B" ) {
+      resistance : 0.0016;
+      routing_formula ( "M1" ) {
+        routing_direction : horizontal;
+        contact_overhang : 0.05;
+      } /* end routing_formula */
+
+      contact_formula ( "VIA1" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M2" ) {
+        routing_direction : vertical;
+        contact_overhang : 0.01;
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA12C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M1" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA1" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M2" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA23C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M2" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA2" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M3" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA34C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M3" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA3" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M4" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA45C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M4" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA4" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M5" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA56C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M5" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA5" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M6" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA67C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M6" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA6" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M7" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA78C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M7" ) {
+        enclosure ( 0.01, 0.05 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA7" ) {
+        rectangle ( -0.07, -0.07, 0.07, 0.07 );
+        contact_spacing ( 0.3, 0.3 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M8" ) {
+        enclosure ( 0.05, 0.01 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+    via_rule_generate ( "VIA89C" ) {
+      resistance : 0.0016;
+      routing_formula ( "M8" ) {
+        enclosure ( 0.045, 0.08 );
+      } /* end routing_formula */
+
+      contact_formula ( "VIA8" ) {
+        rectangle ( -0.18, -0.18, 0.18, 0.18 );
+        contact_spacing ( 0.7, 0.7 );
+        resistance : 0.0016;
+        max_cut_rows_current_direction : 4;
+      } /* end contact_formula */
+
+      routing_formula ( "M9" ) {
+        enclosure ( 0.08, 0.045 );
+      } /* end routing_formula */
+
+    } /* end via_rule_generate */
+
+  } /* end topological_design_rules */
+
+  process_resource ( "min" ) {
+    process_routing_layer ( "M1" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M2" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M3" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M4" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M5" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M6" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M7" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M8" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M9" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_via ( "VIA12A" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA23" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA34" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA45" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA56" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA67" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA78" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA89" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "POLYCON" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "DIFFCON" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA12B" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA12C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA23C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA34C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA45C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA56C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA67C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA78C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via ( "VIA89C" ) {
+      resistance : 0.0008;
+    } /* end process_via */
+
+    process_via_rule_generate ( "VIA12A" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA23" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA34" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA45" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA56" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA67" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA78" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA89" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "POLYCON" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "DIFFCON" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA12B" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA12C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA23C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA34C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA45C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA56C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA67C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA78C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA89C" ) {
+      resistance : 0.0008;
+    } /* end process_via_rule_generate */
+
+  } /* end process_resource */
+
+  process_resource ( "max" ) {
+    process_routing_layer ( "M1" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M2" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M3" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M4" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M5" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M6" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M7" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M8" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_routing_layer ( "M9" ) {
+      cap_multiplier : 1;
+    } /* end process_routing_layer */
+
+    process_via ( "VIA12A" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA23" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA34" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA45" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA56" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA67" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA78" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA89" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "POLYCON" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "DIFFCON" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA12B" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA12C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA23C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA34C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA45C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA56C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA67C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA78C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via ( "VIA89C" ) {
+      resistance : 0.0024;
+    } /* end process_via */
+
+    process_via_rule_generate ( "VIA12A" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA23" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA34" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA45" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA56" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA67" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA78" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA89" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "POLYCON" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "DIFFCON" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA12B" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA12C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA23C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA34C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA45C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA56C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA67C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA78C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+    process_via_rule_generate ( "VIA89C" ) {
+      resistance : 0.0024;
+    } /* end process_via_rule_generate */
+
+  } /* end process_resource */
+
+  visual_settings () {
+    stipple ( "impdot" ) {
+      width : 16;
+      height : 16;
+      pattern ( 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 );
+    } /* end stipple */
+
+    stipple ( "hidot" ) {
+      width : 16;
+      height : 16;
+      pattern ( 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 );
+    } /* end stipple */
+
+    stipple ( "rhidot" ) {
+      width : 16;
+      height : 16;
+      pattern ( 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 );
+    } /* end stipple */
+
+    stipple ( "blank" ) {
+      width : 2;
+      height : 2;
+      pattern ( 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "solid" ) {
+      width : 2;
+      height : 2;
+      pattern ( 1, 1, 1, 1 );
+    } /* end stipple */
+
+    stipple ( "backSlash" ) {
+      width : 8;
+      height : 8;
+      pattern ( 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 );
+    } /* end stipple */
+
+    stipple ( "slash" ) {
+      width : 8;
+      height : 8;
+      pattern ( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "dot" ) {
+      width : 8;
+      height : 8;
+      pattern ( 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "wave" ) {
+      width : 16;
+      height : 16;
+      pattern ( 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "zigzag" ) {
+      width : 16;
+      height : 16;
+      pattern ( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "brick" ) {
+      width : 16;
+      height : 16;
+      pattern ( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1 );
+    } /* end stipple */
+
+    stipple ( "enter" ) {
+      width : 16;
+      height : 16;
+      pattern ( 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "horizontal" ) {
+      width : 8;
+      height : 8;
+      pattern ( 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "vertical" ) {
+      width : 8;
+      height : 8;
+      pattern ( 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 );
+    } /* end stipple */
+
+    stipple ( "rectangleX" ) {
+      width : 1;
+      height : 1;
+      pattern ( 0 );
+    } /* end stipple */
+
+    stipple ( "twelldot" ) {
+      width : 16;
+      height : 16;
+      pattern ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    stipple ( "welldot" ) {
+      width : 16;
+      height : 16;
+      pattern ( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+    } /* end stipple */
+
+    color ( "black" ) {
+      red_intensity : 0;
+      green_intensity : 0;
+      blue_intensity : 0;
+    } /* end color */
+
+    color ( "white" ) {
+      red_intensity : 255;
+      green_intensity : 255;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "orange" ) {
+      red_intensity : 255;
+      green_intensity : 127;
+      blue_intensity : 0;
+    } /* end color */
+
+    color ( "lead" ) {
+      red_intensity : 191;
+      green_intensity : 191;
+      blue_intensity : 191;
+    } /* end color */
+
+    color ( "salmon" ) {
+      red_intensity : 255;
+      green_intensity : 127;
+      blue_intensity : 127;
+    } /* end color */
+
+    color ( "purple" ) {
+      red_intensity : 191;
+      green_intensity : 63;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "aqua" ) {
+      red_intensity : 127;
+      green_intensity : 255;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "drab" ) {
+      red_intensity : 127;
+      green_intensity : 127;
+      blue_intensity : 63;
+    } /* end color */
+
+    color ( "brown" ) {
+      red_intensity : 191;
+      green_intensity : 63;
+      blue_intensity : 63;
+    } /* end color */
+
+    color ( "red" ) {
+      red_intensity : 255;
+      green_intensity : 0;
+      blue_intensity : 0;
+    } /* end color */
+
+    color ( "green" ) {
+      red_intensity : 0;
+      green_intensity : 255;
+      blue_intensity : 0;
+    } /* end color */
+
+    color ( "yellow" ) {
+      red_intensity : 255;
+      green_intensity : 255;
+      blue_intensity : 0;
+    } /* end color */
+
+    color ( "blue" ) {
+      red_intensity : 0;
+      green_intensity : 0;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "magenta" ) {
+      red_intensity : 255;
+      green_intensity : 0;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "cyan" ) {
+      red_intensity : 0;
+      green_intensity : 255;
+      blue_intensity : 255;
+    } /* end color */
+
+    color ( "ltGreen" ) {
+      green_intensity : 240;
+      blue_intensity : 110;
+    } /* end color */
+
+    line_style ( "solid" ) {
+      width : 8;
+      height : 1;
+      pattern ( 1, 1, 1, 1, 1, 1, 1, 1 );
+    } /* end line_style */
+
+    line_style ( "dot" ) {
+      width : 8;
+      height : 1;
+      pattern ( 1, 0, 1, 0, 1, 0, 1, 0 );
+    } /* end line_style */
+
+    line_style ( "dash" ) {
+      width : 8;
+      height : 1;
+      pattern ( 1, 1, 1, 0, 1, 1, 1, 0 );
+    } /* end line_style */
+
+    line_style ( "boundary" ) {
+      width : 10;
+      height : 1;
+      pattern ( 1, 1, 1, 1, 1, 0, 0, 1, 0, 0 );
+    } /* end line_style */
+
+    line_style ( "none" ) {
+      width : 2;
+      height : 1;
+      pattern ( 0, 0 );
+    } /* end line_style */
+
+  } /* end visual_settings */
+
+  layer_panel () {
+    display_layer ( "NWELL" ) {
+      is_mask_layer : TRUE;
+      mask_layer : NWELL;
+      color : lead;
+      line_style : solid;
+      stipple : backSlash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DNW" ) {
+      is_mask_layer : FALSE;
+      color : "36";
+      line_style : solid;
+      stipple : backSlash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DIFF" ) {
+      is_mask_layer : TRUE;
+      mask_layer : DIFF;
+      color : "40";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DDMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : DIFF;
+      color : "40";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "PIMP" ) {
+      is_mask_layer : TRUE;
+      mask_layer : PIMP;
+      color : "32";
+      line_style : solid;
+      stipple : dot;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "NIMP" ) {
+      is_mask_layer : TRUE;
+      mask_layer : NIMP;
+      color : ltGreen;
+      line_style : solid;
+      stipple : dot;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DIFF_25" ) {
+      is_mask_layer : TRUE;
+      mask_layer : DIFF_25;
+      color : yellow;
+      line_style : solid;
+      stipple : zigzag;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "PAD" ) {
+      is_mask_layer : FALSE;
+      color : orange;
+      line_style : dash;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "ESD_25" ) {
+      is_mask_layer : FALSE;
+      color : drab;
+      line_style : dash;
+      stipple : zigzag;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "SBLK" ) {
+      is_mask_layer : TRUE;
+      mask_layer : SBLK;
+      color : "62";
+      line_style : dash;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "HVTIMP" ) {
+      is_mask_layer : FALSE;
+      color : orange;
+      line_style : solid;
+      stipple : zigzag;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "LVTIMP" ) {
+      is_mask_layer : FALSE;
+      color : "31";
+      line_style : solid;
+      stipple : zigzag;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M1PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M1PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M2PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M2PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M3PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M3PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M4PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M4PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M5PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M5PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M6PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M6PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M7PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M7PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M8PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M8PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M9PIN" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M9PIN;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "HOTNWL" ) {
+      is_mask_layer : FALSE;
+      color : drab;
+      line_style : solid;
+      stipple : zigzag;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DIOD" ) {
+      is_mask_layer : FALSE;
+      color : white;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "BJTDMY" ) {
+      is_mask_layer : FALSE;
+      color : "62";
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RNW" ) {
+      is_mask_layer : FALSE;
+      color : drab;
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RPOLY" ) {
+      is_mask_layer : FALSE;
+      color : "58";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RDIFF" ) {
+      is_mask_layer : FALSE;
+      color : "47";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "LOGO" ) {
+      is_mask_layer : FALSE;
+      color : orange;
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "IP" ) {
+      is_mask_layer : TRUE;
+      mask_layer : IP;
+      color : white;
+      line_style : solid;
+      stipple : slash;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "prBoundary" ) {
+      is_mask_layer : FALSE;
+      color : yellow;
+      line_style : solid;
+      stipple : dot;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM1" ) {
+      is_mask_layer : FALSE;
+      color : "25";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM2" ) {
+      is_mask_layer : FALSE;
+      color : "44";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM3" ) {
+      is_mask_layer : FALSE;
+      color : "31";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM4" ) {
+      is_mask_layer : FALSE;
+      color : "43";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM5" ) {
+      is_mask_layer : FALSE;
+      color : "40";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM6" ) {
+      is_mask_layer : FALSE;
+      color : "52";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM7" ) {
+      is_mask_layer : FALSE;
+      color : orange;
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM8" ) {
+      is_mask_layer : FALSE;
+      color : "36";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "RM9" ) {
+      is_mask_layer : FALSE;
+      color : "23";
+      line_style : solid;
+      stipple : horizontal;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM1EXCL" ) {
+      is_mask_layer : FALSE;
+      color : drab;
+      line_style : dash;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM2EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "28";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM3EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "31";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM4EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "43";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM5EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "40";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM6EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "52";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM7EXCL" ) {
+      is_mask_layer : FALSE;
+      color : orange;
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM8EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "36";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "DM9EXCL" ) {
+      is_mask_layer : FALSE;
+      color : "23";
+      line_style : solid;
+      stipple : enter;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "PO" ) {
+      is_mask_layer : TRUE;
+      mask_layer : PO;
+      color : red;
+      line_style : none;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "PODMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : PO;
+      color : red;
+      line_style : none;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "CO" ) {
+      is_mask_layer : TRUE;
+      mask_layer : CO;
+      color : white;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M1" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M1;
+      color : blue;
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M1DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M1;
+      color : blue;
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA1" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA1;
+      color : cyan;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M2" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M2;
+      color : "50";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M2DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M2;
+      color : "50";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA2" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA2;
+      color : yellow;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M3" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M3;
+      color : "38";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M3DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M3;
+      color : "38";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA3" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA3;
+      color : "27";
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M4" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M4;
+      color : green;
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M4DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M4;
+      color : green;
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA4" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA4;
+      color : orange;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M5" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M5;
+      color : aqua;
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M5DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M5;
+      color : aqua;
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA5" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA5;
+      color : "40";
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M6" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M6;
+      color : "58";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M6DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M6;
+      color : "58";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA6" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA6;
+      color : "52";
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M7" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M7;
+      color : cyan;
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M7DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M7;
+      color : cyan;
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA7" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA7;
+      color : blue;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M8" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M8;
+      color : "43";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M8DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M8;
+      color : "43";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "VIA8" ) {
+      is_mask_layer : TRUE;
+      mask_layer : VIA8;
+      color : drab;
+      line_style : solid;
+      stipple : rectangleX;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M9" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M9;
+      color : "59";
+      line_style : solid;
+      stipple : solid;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+    display_layer ( "M9DMY" ) {
+      is_mask_layer : TRUE;
+      mask_layer : M9;
+      color : "59";
+      line_style : solid;
+      stipple : brick;
+      blink : FALSE;
+      visible : TRUE;
+      selectable : TRUE;
+    } /* end display_layer */
+
+  } /* end layer_panel */
+
+  milkyway_layer_map () {
+    stream_layer ( "NWELL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 1, 0 );
+      mw_map ( 1, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DNW" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 2, 0 );
+      mw_map ( 2, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DIFF" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 3, 0 );
+      mw_map ( 3, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DDMY" ) {
+      gds_map ( 3, 1 );
+      mw_map ( 3, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "PIMP" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 4, 0 );
+      mw_map ( 4, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "NIMP" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 5, 0 );
+      mw_map ( 5, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DIFF_25" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 6, 0 );
+      mw_map ( 6, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "PAD" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 7, 0 );
+      mw_map ( 7, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "ESD_25" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 8, 0 );
+      mw_map ( 8, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "SBLK" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 9, 0 );
+      mw_map ( 9, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "HVTIMP" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 29, 0 );
+      mw_map ( 29, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "LVTIMP" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 30, 0 );
+      mw_map ( 30, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M1PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 31, 0 );
+      mw_map ( 31, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M2PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 32, 0 );
+      mw_map ( 32, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M3PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 33, 0 );
+      mw_map ( 33, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M4PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 34, 0 );
+      mw_map ( 34, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M5PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 35, 0 );
+      mw_map ( 35, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M6PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 36, 0 );
+      mw_map ( 36, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M7PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 37, 0 );
+      mw_map ( 37, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M8PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 38, 0 );
+      mw_map ( 38, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M9PIN" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 39, 0 );
+      mw_map ( 39, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "HOTNWL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 41, 0 );
+      mw_map ( 41, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DIOD" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 43, 0 );
+      mw_map ( 43, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "BJTDMY" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 44, 0 );
+      mw_map ( 44, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RNW" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 45, 0 );
+      mw_map ( 45, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RPOLY" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 46, 0 );
+      mw_map ( 46, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RDIFF" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 47, 0 );
+      mw_map ( 47, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "LOGO" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 48, 0 );
+      mw_map ( 48, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "IP" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 49, 0 );
+      mw_map ( 49, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "prBoundary" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 50, 0 );
+      mw_map ( 50, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM1" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 51, 0 );
+      mw_map ( 51, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM2" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 52, 0 );
+      mw_map ( 52, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM3" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 53, 0 );
+      mw_map ( 53, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM4" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 54, 0 );
+      mw_map ( 54, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM5" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 55, 0 );
+      mw_map ( 55, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM6" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 56, 0 );
+      mw_map ( 56, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM7" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 57, 0 );
+      mw_map ( 57, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM8" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 58, 0 );
+      mw_map ( 58, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "RM9" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 59, 0 );
+      mw_map ( 59, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM1EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 61, 0 );
+      mw_map ( 61, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM2EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 62, 0 );
+      mw_map ( 62, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM3EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 63, 0 );
+      mw_map ( 63, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM4EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 64, 0 );
+      mw_map ( 64, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM5EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 65, 0 );
+      mw_map ( 65, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM6EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 66, 0 );
+      mw_map ( 66, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM7EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 67, 0 );
+      mw_map ( 67, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM8EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 68, 0 );
+      mw_map ( 68, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "DM9EXCL" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 69, 0 );
+      mw_map ( 69, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "PO" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 10, 0 );
+      mw_map ( 10, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "PODMY" ) {
+      gds_map ( 10, 1 );
+      mw_map ( 10, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "CO" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 20, 0 );
+      mw_map ( 20, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M1" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 11, 0 );
+      mw_map ( 11, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M1DMY" ) {
+      gds_map ( 11, 1 );
+      mw_map ( 11, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA1" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 21, 0 );
+      mw_map ( 21, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M2" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 12, 0 );
+      mw_map ( 12, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M2DMY" ) {
+      gds_map ( 12, 1 );
+      mw_map ( 12, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA2" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 22, 0 );
+      mw_map ( 22, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M3" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 13, 0 );
+      mw_map ( 13, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M3DMY" ) {
+      gds_map ( 13, 1 );
+      mw_map ( 13, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA3" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 23, 0 );
+      mw_map ( 23, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M4" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 14, 0 );
+      mw_map ( 14, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M4DMY" ) {
+      gds_map ( 14, 1 );
+      mw_map ( 14, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA4" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 24, 0 );
+      mw_map ( 24, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M5" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 15, 0 );
+      mw_map ( 15, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M5DMY" ) {
+      gds_map ( 15, 1 );
+      mw_map ( 15, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA5" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 25, 0 );
+      mw_map ( 25, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M6" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 16, 0 );
+      mw_map ( 16, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M6DMY" ) {
+      gds_map ( 16, 1 );
+      mw_map ( 16, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA6" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 26, 0 );
+      mw_map ( 26, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M7" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 17, 0 );
+      mw_map ( 17, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M7DMY" ) {
+      gds_map ( 17, 1 );
+      mw_map ( 17, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA7" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 27, 0 );
+      mw_map ( 27, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M8" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 18, 0 );
+      mw_map ( 18, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M8DMY" ) {
+      gds_map ( 18, 1 );
+      mw_map ( 18, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "VIA8" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 28, 0 );
+      mw_map ( 28, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M9" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 19, 0 );
+      mw_map ( 19, 0 );
+    } /* end stream_layer */
+
+    stream_layer ( "M9DMY" ) {
+      gds_map ( 19, 1 );
+      mw_map ( 19, 1 );
+    } /* end stream_layer */
+
+    stream_layer ( "OverlapCheck" ) {
+      object_type : data;
+      net_type : signal;
+      gds_map ( 192, 0 );
+      mw_map ( 192, 0 );
+    } /* end stream_layer */
+
+  } /* end milkyway_layer_map */
+
+} /* end phys_library */
+

@@ -1,0 +1,23 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN Johnson_count ;
+
+SCANCHAINS 1 ;
+
+- 1
++ START PIN SCANINPORT
++ FLOATING out_reg[0] ( IN SI ) ( OUT QN )
+           out_reg[1] ( IN SI ) ( OUT QN )
+           out_reg[2] ( IN SI ) ( OUT QN )
+           out_reg[3] ( IN SI ) ( OUT QN )
+           out_reg[4] ( IN SI ) ( OUT QN )
+           out_reg[5] ( IN SI ) ( OUT QN )
+           out_reg[6] ( IN SI ) ( OUT QN )
++ PARTITION clk_45_45
++ STOP out_reg[7] SI ;
+
+END SCANCHAINS
+
+END DESIGN

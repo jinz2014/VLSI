@@ -1,0 +1,611 @@
+*SPEF "IEEE 1481-1999"
+*DESIGN "Johnson_count"
+*DATE "Tue Sep  7 16:03:49 2010"
+*VENDOR "Synopsys, Inc."
+*PROGRAM "icc_shell"
+*VERSION "C-2009.06-ICC"
+*DESIGN_FLOW "SYNTHESIS"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1.0 NS
+*C_UNIT 0.0010 PF
+*R_UNIT 1000.0 KOHM
+*L_UNIT 1.0 HENRY
+
+*PORTS
+
+out\[4\] O *L 4.000e-03 *S 2.816e-02 2.907e-02 
+out\[3\] O *L 4.000e-03 *S 1.462e-02 1.511e-02 
+out\[2\] O *L 4.000e-03 *S 1.457e-02 1.505e-02 
+out\[1\] O *L 4.000e-03 *S 2.047e-02 2.116e-02 
+out\[0\] O *L 4.000e-03 *S 1.826e-02 1.887e-02 
+VDD B *L 0.000e+00 *S 0.000e+00 0.000e+00 
+VSS B *L 0.000e+00 *S 0.000e+00 0.000e+00 
+SCANOUTPORT O *L 0.000e+00 *S 2.948e-03 2.753e-03 
+r I *L 0.000e+00 *S 1.885e-02 1.668e-02 *D SDFFARX1 
+clk I *L 0.000e+00 *S 2.597e-02 2.569e-02 *D NBUFFX16 
+SE I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+SCANINPORT I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+out\[7\] O *L 4.000e-03 *S 3.690e-02 3.750e-02 
+out\[6\] O *L 4.000e-03 *S 2.173e-02 2.246e-02 
+out\[5\] O *L 4.000e-03 *S 1.965e-02 2.031e-02 
+
+*D_NET n39 9.297e-01
+*CONN
+*I out_reg\[1\]:QN O
+*I U9:INP I
+*CAP
+1 out_reg\[1\]:QN 1.964e-01
+2 U9:INP 2.684e-01
+3 n39:0 4.648e-01
+*RES
+1 n39:0 U9:INP 2.633e-06
+2 out_reg\[1\]:QN n39:0 2.022e-06
+*END
+
+*D_NET n15 8.044e+00
+*CONN
+*I out_reg\[3\]:RSTB I
+*I U10:ZN O
+*I out_reg\[4\]:RSTB I
+*I out_reg\[0\]:RSTB I
+*I out_reg\[1\]:RSTB I
+*I out_reg\[6\]:RSTB I
+*I out_reg\[2\]:RSTB I
+*I out_reg\[7\]:RSTB I
+*I out_reg\[5\]:RSTB I
+*CAP
+1 out_reg\[3\]:RSTB 2.296e-02
+2 U10:ZN 4.782e-01
+3 out_reg\[4\]:RSTB 4.333e-01
+4 out_reg\[0\]:RSTB 3.277e-01
+5 out_reg\[1\]:RSTB 5.601e-01
+6 out_reg\[6\]:RSTB 4.980e-02
+7 out_reg\[2\]:RSTB 3.682e-01
+8 out_reg\[7\]:RSTB 3.123e-01
+9 out_reg\[5\]:RSTB 2.369e-01
+10 n15:0 2.014e-01
+11 n15:1 7.504e-01
+12 n15:2 1.807e-01
+13 n15:3 5.327e-01
+14 n15:4 8.882e-01
+15 n15:5 9.138e-01
+16 n15:6 1.127e+00
+17 n15:7 6.604e-01
+*RES
+1 n15:2 out_reg\[3\]:RSTB 2.209e-07
+2 n15:0 out_reg\[4\]:RSTB 1.079e-06
+3 out_reg\[4\]:RSTB out_reg\[0\]:RSTB 3.402e-06
+4 n15:5 out_reg\[1\]:RSTB 1.701e-06
+5 n15:1 out_reg\[6\]:RSTB 4.690e-07
+6 n15:3 out_reg\[2\]:RSTB 3.439e-06
+7 n15:1 out_reg\[7\]:RSTB 3.402e-06
+8 n15:4 out_reg\[5\]:RSTB 2.303e-06
+9 U10:ZN n15:0 8.941e-07
+10 n15:4 n15:1 4.062e-06
+11 n15:6 n15:2 1.701e-06
+12 n15:5 n15:3 1.701e-06
+13 n15:7 n15:4 2.742e-06
+14 n15:6 n15:5 5.646e-06
+15 U10:ZN n15:6 4.024e-06
+16 out_reg\[1\]:RSTB n15:7 3.835e-06
+*END
+
+*D_NET n40 4.706e-01
+*CONN
+*I U12:INP I
+*I out_reg\[0\]:QN O
+*CAP
+1 U12:INP 1.948e-01
+2 out_reg\[0\]:QN 4.048e-02
+3 n40:0 2.353e-01
+*RES
+1 n40:0 U12:INP 2.022e-06
+2 out_reg\[0\]:QN n40:0 3.842e-07
+*END
+
+*D_NET n38 5.976e-01
+*CONN
+*I U8:INP I
+*I out_reg\[2\]:QN O
+*CAP
+1 U8:INP 1.320e-01
+2 out_reg\[2\]:QN 1.668e-01
+3 n38:0 2.988e-01
+*RES
+1 n38:0 U8:INP 1.380e-06
+2 out_reg\[2\]:QN n38:0 1.596e-06
+*END
+
+*D_NET n37 6.397e-01
+*CONN
+*I U7:INP I
+*I out_reg\[3\]:QN O
+*CAP
+1 U7:INP 2.936e-01
+2 out_reg\[3\]:QN 2.621e-02
+3 n37:0 3.198e-01
+*RES
+1 n37:0 U7:INP 3.048e-06
+2 out_reg\[3\]:QN n37:0 2.568e-07
+*END
+
+*D_NET n36 5.713e-01
+*CONN
+*I out_reg\[4\]:QN O
+*I U6:INP I
+*CAP
+1 out_reg\[4\]:QN 3.468e-02
+2 U6:INP 2.510e-01
+3 n36:0 2.857e-01
+*RES
+1 n36:0 U6:INP 2.435e-06
+2 out_reg\[4\]:QN n36:0 3.544e-07
+*END
+
+*D_NET n35 9.557e-01
+*CONN
+*I U5:INP I
+*I out_reg\[5\]:QN O
+*CAP
+1 U5:INP 3.481e-01
+2 out_reg\[5\]:QN 1.297e-01
+3 n35:0 4.778e-01
+*RES
+1 n35:0 U5:INP 3.756e-06
+2 out_reg\[5\]:QN n35:0 1.374e-06
+*END
+
+*D_NET n34 6.730e-01
+*CONN
+*I U2:INP I
+*I out_reg\[6\]:QN O
+*CAP
+1 U2:INP 1.325e-01
+2 out_reg\[6\]:QN 2.040e-01
+3 n34:0 3.365e-01
+*RES
+1 n34:0 U2:INP 1.380e-06
+2 out_reg\[6\]:QN n34:0 1.921e-06
+*END
+
+*D_NET n17 6.270e-01
+*CONN
+*I U3:INP I
+*I out_reg\[7\]:QN O
+*CAP
+1 U3:INP 1.944e-01
+2 out_reg\[7\]:QN 1.191e-01
+3 n17:0 3.135e-01
+*RES
+1 n17:0 U3:INP 2.022e-06
+2 out_reg\[7\]:QN n17:0 1.247e-06
+*END
+
+*D_NET clk_BC 4.694e-01
+*CONN
+*I INVX32_BC_1:INP I
+*I INVX32_BC:ZN O
+*CAP
+1 INVX32_BC_1:INP 1.637e-01
+2 INVX32_BC:ZN 7.096e-02
+3 clk_BC:0 2.347e-01
+*RES
+1 clk_BC:0 INVX32_BC_1:INP 1.804e-06
+2 INVX32_BC:ZN clk_BC:0 7.301e-07
+*END
+
+*D_NET clk_BC_1 9.623e+00
+*CONN
+*I out_reg\[4\]:CLK I
+*I out_reg\[0\]:CLK I
+*I INVX32_BC_1:ZN O
+*I out_reg\[1\]:CLK I
+*I out_reg\[3\]:CLK I
+*I out_reg\[6\]:CLK I
+*I out_reg\[5\]:CLK I
+*I out_reg\[2\]:CLK I
+*I out_reg\[7\]:CLK I
+*CAP
+1 out_reg\[4\]:CLK 3.323e-01
+2 out_reg\[0\]:CLK 6.520e-01
+3 INVX32_BC_1:ZN 1.414e-01
+4 out_reg\[1\]:CLK 2.239e-02
+5 out_reg\[3\]:CLK 3.207e-01
+6 out_reg\[6\]:CLK 1.024e+00
+7 out_reg\[5\]:CLK 1.086e+00
+8 out_reg\[2\]:CLK 3.730e-01
+9 out_reg\[7\]:CLK 3.106e-01
+10 clk_BC_1:0 3.431e-01
+11 clk_BC_1:1 6.640e-01
+12 clk_BC_1:2 1.878e-01
+13 clk_BC_1:3 1.050e+00
+14 clk_BC_1:4 1.271e+00
+15 clk_BC_1:5 8.439e-01
+16 clk_BC_1:6 9.999e-01
+*RES
+1 out_reg\[0\]:CLK out_reg\[4\]:CLK 3.402e-06
+2 clk_BC_1:1 out_reg\[0\]:CLK 3.035e-06
+3 clk_BC_1:2 out_reg\[1\]:CLK 2.085e-07
+4 clk_BC_1:0 out_reg\[3\]:CLK 3.402e-06
+5 clk_BC_1:3 out_reg\[6\]:CLK 3.157e-06
+6 clk_BC_1:4 out_reg\[5\]:CLK 5.929e-06
+7 clk_BC_1:5 out_reg\[2\]:CLK 3.585e-06
+8 clk_BC_1:6 out_reg\[7\]:CLK 3.402e-06
+9 clk_BC_1:2 clk_BC_1:0 2.085e-07
+10 INVX32_BC_1:ZN clk_BC_1:1 1.493e-06
+11 clk_BC_1:4 clk_BC_1:2 1.477e-06
+12 clk_BC_1:1 clk_BC_1:3 1.926e-06
+13 clk_BC_1:3 clk_BC_1:4 5.327e-06
+14 out_reg\[5\]:CLK clk_BC_1:5 4.879e-06
+15 out_reg\[6\]:CLK clk_BC_1:6 6.753e-06
+*END
+
+*D_NET n6 1.104e+00
+*CONN
+*I U2:Z O
+*I out_reg\[7\]:SI I
+*CAP
+1 U2:Z 1.767e-01
+2 out_reg\[7\]:SI 3.753e-01
+3 n6:0 5.520e-01
+*RES
+1 n6:0 out_reg\[7\]:SI 3.822e-06
+2 U2:Z n6:0 1.925e-06
+*END
+
+*D_NET n7 2.169e+00
+*CONN
+*I out_reg\[0\]:D I
+*I U3:Z O
+*CAP
+1 out_reg\[0\]:D 1.761e-01
+2 U3:Z 9.083e-01
+3 n7:0 1.084e+00
+*RES
+1 n7:0 out_reg\[0\]:D 1.796e-06
+2 U3:Z n7:0 8.588e-06
+*END
+
+*D_NET n8 4.417e-01
+*CONN
+*I U4:Z O
+*I out_reg\[0\]:SI I
+*CAP
+1 U4:Z 1.880e-01
+2 out_reg\[0\]:SI 3.285e-02
+3 n8:0 2.209e-01
+*RES
+1 n8:0 out_reg\[0\]:SI 3.112e-07
+2 U4:Z n8:0 1.925e-06
+*END
+
+*D_NET n9 1.791e+00
+*CONN
+*I out_reg\[6\]:SI I
+*I U5:Z O
+*CAP
+1 out_reg\[6\]:SI 1.861e-01
+2 U5:Z 7.093e-01
+3 n9:0 8.953e-01
+*RES
+1 n9:0 out_reg\[6\]:SI 1.925e-06
+2 U5:Z n9:0 6.990e-06
+*END
+
+*D_NET n10 8.025e-01
+*CONN
+*I U6:Z O
+*I out_reg\[5\]:SI I
+*CAP
+1 U6:Z 1.844e-01
+2 out_reg\[5\]:SI 2.169e-01
+3 n10:0 4.013e-01
+*RES
+1 n10:0 out_reg\[5\]:SI 2.093e-06
+2 U6:Z n10:0 1.925e-06
+*END
+
+*D_NET n11 7.165e-01
+*CONN
+*I out_reg\[4\]:SI I
+*I U7:Z O
+*CAP
+1 out_reg\[4\]:SI 3.524e-01
+2 U7:Z 5.827e-03
+3 n11:0 3.583e-01
+*RES
+1 n11:0 out_reg\[4\]:SI 3.632e-06
+2 U7:Z n11:0 6.002e-08
+*END
+
+*D_NET n12 7.301e-01
+*CONN
+*I out_reg\[3\]:SI I
+*I U8:Z O
+*CAP
+1 out_reg\[3\]:SI 1.413e-01
+2 U8:Z 2.237e-01
+3 n12:0 3.651e-01
+*RES
+1 n12:0 out_reg\[3\]:SI 1.477e-06
+2 U8:Z n12:0 2.118e-06
+*END
+
+*D_NET n13 7.509e-01
+*CONN
+*I U9:Z O
+*I out_reg\[2\]:SI I
+*CAP
+1 U9:Z 1.426e-01
+2 out_reg\[2\]:SI 2.328e-01
+3 n13:0 3.754e-01
+*RES
+1 n13:0 out_reg\[2\]:SI 2.238e-06
+2 U9:Z n13:0 1.477e-06
+*END
+
+*D_NET n14 1.073e+01
+*CONN
+*I out_reg\[4\]:SE I
+*I out_reg\[0\]:SE I
+*I out_reg\[1\]:SE I
+*I out_reg\[3\]:SE I
+*I out_reg\[6\]:SE I
+*I out_reg\[5\]:SE I
+*I U11:Z O
+*I out_reg\[2\]:SE I
+*I out_reg\[7\]:SE I
+*CAP
+1 out_reg\[4\]:SE 3.323e-01
+2 out_reg\[0\]:SE 1.191e+00
+3 out_reg\[1\]:SE 3.090e-01
+4 out_reg\[3\]:SE 1.286e+00
+5 out_reg\[6\]:SE 1.203e+00
+6 out_reg\[5\]:SE 3.099e-01
+7 U11:Z 6.612e-01
+8 out_reg\[2\]:SE 9.609e-01
+9 out_reg\[7\]:SE 6.452e-01
+10 n14:0 6.466e-01
+11 n14:1 9.787e-01
+12 n14:2 4.875e-01
+13 n14:3 6.184e-01
+14 n14:4 1.100e+00
+*RES
+1 out_reg\[0\]:SE out_reg\[4\]:SE 3.402e-06
+2 out_reg\[6\]:SE out_reg\[0\]:SE 8.118e-06
+3 n14:1 out_reg\[1\]:SE 2.880e-06
+4 n14:1 out_reg\[3\]:SE 3.402e-06
+5 n14:3 out_reg\[6\]:SE 3.567e-06
+6 n14:0 out_reg\[5\]:SE 1.740e-06
+7 out_reg\[3\]:SE out_reg\[2\]:SE 9.306e-06
+8 n14:4 out_reg\[7\]:SE 6.969e-06
+9 U11:Z n14:0 2.022e-06
+10 n14:2 n14:1 3.258e-06
+11 out_reg\[5\]:SE n14:2 1.497e-06
+12 n14:0 n14:3 2.772e-06
+13 U11:Z n14:4 4.422e-06
+*END
+
+*D_NET n16 1.049e+00
+*CONN
+*I out_reg\[1\]:SI I
+*I U12:Z O
+*CAP
+1 out_reg\[1\]:SI 4.755e-01
+2 U12:Z 4.887e-02
+3 n16:0 5.244e-01
+*RES
+1 n16:0 out_reg\[1\]:SI 4.879e-06
+2 U12:Z n16:0 4.560e-07
+*END
+
+*D_NET r 1.255e+00
+*CONN
+*P r I
+*I U10:INP I
+*CAP
+1 r 6.973e-02
+2 U10:INP 5.576e-01
+3 r:0 6.273e-01
+*RES
+1 r:0 U10:INP 5.227e-06
+2 r r:0 7.164e-07
+*END
+
+*D_NET clk 1.511e+00
+*CONN
+*P clk I
+*I INVX32_BC:INP I
+*CAP
+1 clk 2.251e-02
+2 INVX32_BC:INP 7.329e-01
+3 clk:0 7.554e-01
+*RES
+1 clk:0 INVX32_BC:INP 7.611e-06
+2 clk clk:0 2.463e-07
+*END
+
+*D_NET SE 3.312e+00
+*CONN
+*P SE I
+*I U11:INP I
+*CAP
+1 SE 7.766e-01
+2 U11:INP 8.795e-01
+3 SE:0 1.656e+00
+*RES
+1 SE:0 U11:INP 8.480e-06
+2 SE SE:0 8.148e-06
+*END
+
+*D_NET SCANINPORT 3.536e+00
+*CONN
+*I U4:INP I
+*P SCANINPORT I
+*CAP
+1 U4:INP 6.132e-01
+2 SCANINPORT 1.155e+00
+3 SCANINPORT:0 1.768e+00
+*RES
+1 SCANINPORT:0 U4:INP 6.433e-06
+2 SCANINPORT SCANINPORT:0 1.191e-05
+*END
+
+*D_NET out\[4\] 4.454e+00
+*CONN
+*I out_reg\[4\]:Q O
+*I out_reg\[5\]:D I
+*P out[4] O
+*CAP
+1 out_reg\[4\]:Q 1.926e-01
+2 out_reg\[5\]:D 1.233e+00
+3 out[4] 8.007e-01
+4 out\[4\]:0 6.916e-01
+5 out\[4\]:1 1.535e+00
+*RES
+1 out\[4\]:0 out_reg\[5\]:D 4.809e-06
+2 out\[4\]:1 out[4] 8.650e-06
+3 out_reg\[4\]:Q out\[4\]:0 1.969e-06
+4 out_reg\[5\]:D out\[4\]:1 7.140e-06
+*END
+
+*D_NET out\[3\] 2.200e+00
+*CONN
+*P out[3] O
+*I out_reg\[4\]:D I
+*I out_reg\[3\]:Q O
+*CAP
+1 out[3] 1.308e-01
+2 out_reg\[4\]:D 6.124e-01
+3 out_reg\[3\]:Q 3.569e-01
+4 out\[3\]:0 4.642e-01
+5 out\[3\]:1 6.358e-01
+*RES
+1 out\[3\]:0 out[3] 1.282e-06
+2 out\[3\]:1 out_reg\[4\]:D 6.353e-06
+3 out_reg\[3\]:Q out\[3\]:0 3.501e-06
+4 out_reg\[3\]:Q out\[3\]:1 2.302e-07
+*END
+
+*D_NET out\[2\] 1.349e+00
+*CONN
+*I out_reg\[3\]:D I
+*P out[2] O
+*I out_reg\[2\]:Q O
+*CAP
+1 out_reg\[3\]:D 1.813e-01
+2 out[2] 2.951e-01
+3 out_reg\[2\]:Q 4.360e-02
+4 out\[2\]:0 1.983e-01
+5 out\[2\]:1 6.311e-01
+*RES
+1 out\[2\]:1 out_reg\[3\]:D 1.745e-06
+2 out\[2\]:1 out[2] 3.051e-06
+3 out_reg\[2\]:Q out\[2\]:0 4.506e-07
+4 out\[2\]:0 out\[2\]:1 1.480e-06
+*END
+
+*D_NET out\[1\] 2.581e+00
+*CONN
+*I out_reg\[1\]:Q O
+*I out_reg\[2\]:D I
+*P out[1] O
+*CAP
+1 out_reg\[1\]:Q 3.719e-01
+2 out_reg\[2\]:D 7.821e-01
+3 out[1] 1.365e-01
+4 out\[1\]:0 4.209e-01
+5 out\[1\]:1 8.697e-01
+*RES
+1 out\[1\]:1 out_reg\[2\]:D 4.784e-06
+2 out\[1\]:0 out[1] 1.349e-06
+3 out_reg\[2\]:D out\[1\]:0 3.051e-06
+4 out_reg\[1\]:Q out\[1\]:1 3.853e-06
+*END
+
+*D_NET out\[0\] 2.783e+00
+*CONN
+*I out_reg\[1\]:D I
+*I out_reg\[0\]:Q O
+*P out[0] O
+*CAP
+1 out_reg\[1\]:D 1.427e-01
+2 out_reg\[0\]:Q 1.097e+00
+3 out[0] 1.519e-01
+4 out\[0\]:0 5.504e-01
+5 out\[0\]:1 8.409e-01
+*RES
+1 out\[0\]:1 out_reg\[1\]:D 1.329e-06
+2 out\[0\]:0 out[0] 1.579e-06
+3 out_reg\[0\]:Q out\[0\]:0 4.390e-06
+4 out_reg\[0\]:Q out\[0\]:1 7.255e-06
+*END
+
+*D_NET out\[6\] 4.111e+00
+*CONN
+*I out_reg\[6\]:Q O
+*I out_reg\[7\]:D I
+*P out[6] O
+*CAP
+1 out_reg\[6\]:Q 1.479e+00
+2 out_reg\[7\]:D 1.781e-01
+3 out[6] 3.986e-01
+4 out\[6\]:0 4.490e-01
+5 out\[6\]:1 1.606e+00
+*RES
+1 out\[6\]:0 out_reg\[7\]:D 1.814e-06
+2 out\[6\]:1 out[6] 3.831e-06
+3 out_reg\[6\]:Q out\[6\]:0 2.951e-06
+4 out_reg\[6\]:Q out\[6\]:1 1.260e-05
+*END
+
+*D_NET out\[5\] 3.039e+00
+*CONN
+*I out_reg\[6\]:D I
+*I out_reg\[5\]:Q O
+*P out[5] O
+*CAP
+1 out_reg\[6\]:D 4.068e-01
+2 out_reg\[5\]:Q 1.077e-01
+3 out[5] 1.066e-01
+4 out\[5\]:0 1.113e+00
+5 out\[5\]:1 1.305e+00
+*RES
+1 out\[5\]:1 out_reg\[6\]:D 4.208e-06
+2 out\[5\]:0 out[5] 1.059e-06
+3 out_reg\[5\]:Q out\[5\]:0 1.162e-06
+4 out\[5\]:0 out\[5\]:1 8.853e-06
+*END
+
+*D_NET out\[7\] 5.144e+00
+*CONN
+*I U1:INP I
+*I out_reg\[7\]:Q O
+*P out[7] O
+*CAP
+1 U1:INP 7.828e-01
+2 out_reg\[7\]:Q 1.104e+00
+3 out[7] 6.854e-01
+4 out\[7\]:0 7.791e-01
+5 out\[7\]:1 1.793e+00
+*RES
+1 out\[7\]:1 U1:INP 7.295e-06
+2 out\[7\]:0 out[7] 7.034e-06
+3 out_reg\[7\]:Q out\[7\]:0 9.875e-07
+4 out_reg\[7\]:Q out\[7\]:1 1.058e-05
+*END
+
+*D_NET SCANOUTPORT 1.895e+00
+*CONN
+*P SCANOUTPORT O
+*I U1:Z O
+*CAP
+1 SCANOUTPORT 5.232e-01
+2 U1:Z 4.241e-01
+3 SCANOUTPORT:0 9.474e-01
+*RES
+1 SCANOUTPORT:0 SCANOUTPORT 5.431e-06
+2 U1:Z SCANOUTPORT:0 4.368e-06
+*END

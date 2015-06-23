@@ -1,0 +1,23 @@
+set_mw_lib_reference  -mw_reference_library {../ref/saed90nm_dv} ./COUNT/
+open_mw_lib ./COUNT
+set ::auto_restore_mw_cel_lib_setup false
+open_mw_cel  Johnson_count
+
+set_write_stream_options -map_layer ../ref/saed90nm.gdsout.map \
+                               -output_filling fill \
+                               -child_depth 20 \
+                               -output_outdated_fill  \
+                              -output_pin  {text geometry}
+                write_stream -lib COUNT\
+                     -format gds\
+                     -cells Johnson_count\
+                     ../results/Johnson_count.gds
+
+extract_rc
+
+write_parasitics -output {../results/Johnson_count.spef}
+
+write_verilog -pg -no_physical_only_cells ../results/Johnson_count.v
+
+write_verilog -no_physical_only_cells ../results/Johnson_count_fm.v
+
